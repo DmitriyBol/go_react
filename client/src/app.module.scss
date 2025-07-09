@@ -1,0 +1,10 @@
+.wrap {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--backgound-light);
+
+    &.dark {
+        background-color: var(--backgound-dark);
+    }
+}
