@@ -1,0 +1,9 @@
+.sectionWrap {
+    width: 900px;
+    height: 100%;
+    margin: 20px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+}

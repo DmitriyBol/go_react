@@ -1,0 +1,46 @@
+.itemWrap {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--main-color-10);
+    background-color: var(--main-color-90);
+    transition:
+        background-color 0.3s ease-in-out,
+        border-color 0.3s ease-in-out;
+
+    &.dark {
+        background-color: var(--main-color-60);
+        border: 2px solid var(--main-color-10);
+    }
+
+    > span {
+        font-family: "Roboto Light", sans-serif;
+        color: var(--elements-light);
+    }
+}
+
+.idPart {
+    width: 30px;
+}
+
+.completePart {
+    width: 100px;
+}
+
+.bodyPart {
+    width: 600px;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.btn {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    align-items: flex-end;
+}

@@ -7,10 +7,13 @@
     align-items: center;
     color: var(--elements-light);
     border-bottom: 1px solid var(--elements-light);
+    background-color: var(--main-color-90);
+    z-index: var(--z-index-50);
 
     &.dark {
         color: var(--elements-dark);
         border-bottom: 1px solid var(--elements-dark);
+        background-color: var(--main-color-60);
     }
 
     .themeButton {
