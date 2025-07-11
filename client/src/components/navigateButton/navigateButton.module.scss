@@ -1,0 +1,19 @@
+.linkItem {
+    font-weight: bold;
+    color: var(--shade-100);
+    cursor: pointer;
+    text-decoration: 0 underline transparent;
+    transition: all .2s linear;
+
+    &:hover {
+        text-decoration: 1px underline var(--main-color-30);
+    }
+
+    &.dark {
+        color: var(--elements-dark-theme);
+    }
+
+    &.active {
+        text-decoration: 3px underline var(--main-color-30);
+    }
+}

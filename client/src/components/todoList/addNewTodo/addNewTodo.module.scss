@@ -9,7 +9,7 @@
     height: 50px;
     border-radius: 4px;
     padding: 5px;
-    border: 1px solid var(--elements-light);
+    border: 1px solid var(--elements-light-theme);
     background-color: var(--main-color-30);
     z-index: 0;
     cursor: pointer;
@@ -19,7 +19,7 @@
     flex-direction: column;
 
     &:hover {
-        color: var(--elements-light);
+        color: var(--elements-light-theme);
         top: 80px;
     }
 }
@@ -40,7 +40,7 @@
     top: 15px;
     left: 10px;
     border-radius: 50%;
-    border: 1px solid var(--elements-light);
+    border: 1px solid var(--elements-light-theme);
     font-weight: bold;
     cursor: pointer;
 }
@@ -57,7 +57,7 @@
     position: absolute;
     right: 10px;
     bottom: 10px;
-    border: 1px solid var(--elements-light);
+    border: 1px solid var(--elements-light-theme);
     border-radius: 4px;
     cursor: pointer;
 }
