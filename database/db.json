@@ -1,34 +1,9 @@
 {
   "todoList": [
     {
-      "id": 4,
-      "completed": false,
-      "body": "and they dont stop coming x 3"
-    },
-    {
       "id": 1,
       "completed": false,
-      "body": "somebody once told me..."
-    },
-    {
-      "id": 5,
-      "completed": false,
-      "body": "qweqweqeqweqweqw"
-    },
-    {
-      "id": 6,
-      "completed": false,
-      "body": "qwqfqwfqwfqwfqwd"
-    },
-    {
-      "id": 7,
-      "completed": false,
-      "body": "and they don't stop coming"
-    },
-    {
-      "id": 8,
-      "completed": false,
-      "body": "213123123123"
+      "body": "Some new todo to test"
     }
   ]
 }

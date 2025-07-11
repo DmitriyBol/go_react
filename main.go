@@ -48,6 +48,36 @@ func main() {
 		return c.Status(201).JSON(fiber.Map{"msg": "new todo successfully added"})
 	})
 
+	app.Delete("/api/todos", func(c *fiber.Ctx) error {
+		todo := &store.Todo{}
+
+		if err := c.BodyParser(todo); err != nil {
+			return err
+		}
+
+		err := todoStore.DeleteTodo(todo.ID)
+		if err != nil {
+			return err
+		}
+
+		return c.Status(200).JSON(fiber.Map{"msg": "todo successfully removed"})
+	})
+
+	app.Patch("/api/todos", func(c *fiber.Ctx) error {
+		todo := &store.Todo{}
+
+		if err := c.BodyParser(todo); err != nil {
+			return err
+		}
+
+		err := todoStore.UpdateTodoCompletedStatus(todo.ID, todo.Completed)
+		if err != nil {
+			return err
+		}
+
+		return c.Status(200).JSON(fiber.Map{"msg": "todo successfully updated"})
+	})
+
 	app.Get("/api/todos/:id", func(c *fiber.Ctx) error {
 		idStr := c.Params("ID")
 

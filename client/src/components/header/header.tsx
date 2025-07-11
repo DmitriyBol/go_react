@@ -21,17 +21,14 @@ const NAVIGATE_BUTTONS: NavigateButtonPropsType[] = [
     {
         linkText: 'Home',
         to: '/',
-        index: 0,
     },
     {
         linkText: 'Todos',
         to: '/todo',
-        index: 1,
     },
     {
         linkText: 'Products',
         to: '/products',
-        index: 2,
     },
 ];
 
@@ -42,13 +39,13 @@ export const Header = () => {
         <header className={classNames(s.wrap, {[s.dark]: theme === 'dark'})}>
             <div className={s.headerWrap}>
                 <nav className={s.navigateBar}>
-                    {NAVIGATE_BUTTONS.map((btn, index) => {
+                    {NAVIGATE_BUTTONS.map((btn) => {
                         return (
                             <NavigateButton
                                 key={btn.linkText}
                                 linkText={btn.linkText}
                                 to={btn.to}
-                                index={btn.index || index} />
+                            />
                         );
                     })}
                 </nav>

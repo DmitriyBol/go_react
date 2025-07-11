@@ -3,7 +3,7 @@ import {TodoItem} from './todoItem/todoItem.tsx';
 
 import s from './todoList.module.scss';
 import {AddNewTodo} from './addNewTodo/addNewTodo.tsx';
-import {prefetchTodos} from '../../api/refetchTodos/prefetchTodos.ts';
+import {prefetchTodo} from '../../api/todos/prefetchTodo.ts';
 
 export type TodoResponseType = {
     id: number;
@@ -14,7 +14,7 @@ export type TodoResponseType = {
 export const TodosList = () => {
     const {data = [], isLoading} = useQuery({
         queryKey: ['todos'],
-        queryFn: async () => prefetchTodos(),
+        queryFn: async () => prefetchTodo(),
     });
 
     return <section className={s.sectionWrap}>

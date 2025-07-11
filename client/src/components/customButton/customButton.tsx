@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import {useCallback} from 'react';
+import React, {useCallback} from 'react';
 import useZusStore from '../../store.ts';
 
 import s from './customButton.module.scss';
@@ -7,7 +7,7 @@ import s from './customButton.module.scss';
 export type CustomButtonPropsType = {
     buttonText: string;
     isHighLight: boolean;
-    onClick?: () => void;
+    onClick?: (a?: React.MouseEvent) => void;
     isThemeButton?: boolean;
 };
 

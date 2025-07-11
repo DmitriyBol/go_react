@@ -74,6 +74,56 @@ func (s *TodoStore) AddNewTodo(newTodo Todo) error {
 	return nil
 }
 
+func (s *TodoStore) DeleteTodo(id int) error {
+	if _, ok := s.todos[id]; !ok {
+		return fmt.Errorf("задача с ID %d не найдена", id)
+	}
+	delete(s.todos, id)
+
+	todoList := make([]Todo, 0, len(s.todos))
+	for _, todo := range s.todos {
+		todoList = append(todoList, todo)
+	}
+
+	db := dbFormat{TodoList: todoList}
+
+	jsonData, err := json.MarshalIndent(db, "", "  ")
+	if err != nil {
+		return fmt.Errorf("ошибка при кодировании в JSON: %w", err)
+	}
+
+	if err := os.WriteFile(s.filePath, jsonData, 0644); err != nil {
+		return fmt.Errorf("ошибка при записи в файл: %w", err)
+	}
+	return nil
+}
+
+func (s *TodoStore) UpdateTodoCompletedStatus(id int) error {
+	todo, ok := s.todos[id]
+	if !ok {
+		return fmt.Errorf("задача с ID %d не найдена", id)
+	}
+
+	todo.Completed = !todo.Completed
+	s.todos[id] = todo
+
+	todoList := make([]Todo, 0, len(s.todos))
+	for _, t := range s.todos {
+		todoList = append(todoList, t)
+	}
+
+	db := dbFormat{TodoList: todoList}
+	jsonData, err := json.MarshalIndent(db, "", "  ")
+	if err != nil {
+		return fmt.Errorf("ошибка при кодировании в JSON: %w", err)
+	}
+
+	if err := os.WriteFile(s.filePath, jsonData, 0644); err != nil {
+		return fmt.Errorf("ошибка при записи в файл: %w", err)
+	}
+	return nil
+}
+
 func (s *TodoStore) GetTodo(id int) (Todo, bool) {
 	todo, ok := s.todos[id]
 	return todo, ok

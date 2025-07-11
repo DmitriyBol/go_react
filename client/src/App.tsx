@@ -12,7 +12,6 @@ const router = createBrowserRouter([
         path: '/',
         element: <>
             <Header />
-            123
         </>,
     },
     {
@@ -20,6 +19,12 @@ const router = createBrowserRouter([
         element: <>
             <Header />
             <TodosList />
+        </>,
+    },
+    {
+        path: '/products',
+        element: <>
+            <Header />
         </>,
     },
 ]);
