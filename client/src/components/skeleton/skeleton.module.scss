@@ -1,0 +1,28 @@
+@keyframes skeleton-loading {
+    0% {
+        background-color: var(--shade-40);
+    }
+    100% {
+        background-color: var(--shade-20);
+    }
+}
+@keyframes skeleton-loading-dark {
+    0% {
+        background-color: var(--main-color-90);
+    }
+    100% {
+        background-color: var(--shade-100);
+    }
+}
+
+.skeletonWrap {
+    width: 100%;
+    height: 100%;
+    background-color: var(--elements-dark-theme);
+    animation: skeleton-loading 1s linear infinite alternate;
+
+    &.dark {
+        background-color: var(--elements-light-theme);
+        animation: skeleton-loading-dark 1s linear infinite alternate;
+    }
+}

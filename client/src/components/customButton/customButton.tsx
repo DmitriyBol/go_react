@@ -9,6 +9,7 @@ export type CustomButtonPropsType = {
     isHighLight: boolean;
     onClick?: (a?: React.MouseEvent) => void;
     isThemeButton?: boolean;
+    disabled?: boolean;
 };
 
 export const CustomButton = (
@@ -16,7 +17,8 @@ export const CustomButton = (
         buttonText,
         isHighLight,
         onClick,
-        isThemeButton
+        isThemeButton,
+        disabled
     }: CustomButtonPropsType
 ) => {
     const {theme} = useZusStore();
@@ -37,7 +39,13 @@ export const CustomButton = (
     
     return (
         <button
-            className={classNames(s.button, {[s.highLight]: isHighLight, [s.dark]: theme === 'dark'})}
+            disabled={disabled}
+            className={classNames(
+                s.button, {
+                    [s.highLight]: isHighLight,
+                    [s.dark]: theme === 'dark',
+                    [s.disabled]: disabled || false,
+                })}
             onClick={onClickHandler}
         >
             {buttonText}

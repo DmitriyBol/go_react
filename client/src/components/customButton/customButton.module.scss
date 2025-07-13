@@ -20,6 +20,11 @@
     &.dark {
         color: var(--elements-dark-theme);
     }
+
+    &.disabled {
+        cursor: not-allowed;
+        background-color: var(--shade-60);
+    }
 }
 
 .themeButton {

@@ -10,16 +10,16 @@
     gap: 20px;
     background-color: var(--elements-dark-theme);
     transition:
-        background-color 0.3s ease-in-out,
-        border-color 0.3s ease-in-out,
+        background-color 0.3s linear,
+        border-color 0.3s linear,
         transform 0.3s linear;
 
     &:hover {
         transform: scale(1.01);
         background: linear-gradient(
-            141deg,
-            rgba(245, 245, 245, 1) 71%,
-            rgba(218, 217, 216, 1) 100%
+                141deg,
+                var(--elements-dark-theme) 50%,
+                var(--shade-40) 100%,
         );
     }
 
@@ -29,12 +29,12 @@
         &:hover {
             background: linear-gradient(
                 141deg,
-                rgba(30, 30, 30, 1) 71%,
-                rgba(246, 0, 158, 1) 100%
+                var(--main-color-90) 50%,
+                var(--main-color-30) 100%
             );
         }
 
-        > * {
+        > span {
             color: var(--elements-dark-theme);
         }
     }

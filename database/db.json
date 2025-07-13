@@ -4,6 +4,16 @@
       "id": 1,
       "completed": false,
       "body": "Some new todo to test"
+    },
+    {
+      "id": 4,
+      "completed": false,
+      "body": "new todo to test"
+    },
+    {
+      "id": 3,
+      "completed": false,
+      "body": "and another to sort options"
     }
   ]
 }

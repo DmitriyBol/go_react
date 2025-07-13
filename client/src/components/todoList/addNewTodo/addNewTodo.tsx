@@ -7,7 +7,7 @@ import useZusStore from '../../../store.ts';
 
 import s from './addNewTodo.module.scss';
 
-export const AddNewTodo = () => {
+export const AddNewTodo = ({disabled}: {disabled: boolean}) => {
     const {theme} = useZusStore();
     const [text, setText] = useState('');
     const queryClient = useQueryClient();
@@ -39,6 +39,7 @@ export const AddNewTodo = () => {
                 onChange={(e) => onChangeHandler(e)}
                 value={text}/>
             <CustomButton
+                disabled={disabled}
                 buttonText="Add new todo"
                 isHighLight
                 onClick={submitData}
