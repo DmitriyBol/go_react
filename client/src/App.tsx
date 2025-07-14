@@ -6,6 +6,7 @@ import useZusStore from './store.ts';
 import s from './app.module.scss';
 import classNames from 'classnames';
 import {createBrowserRouter, RouterProvider} from 'react-router';
+import {ProductList} from './components/productList/productList.tsx';
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
         path: '/products',
         element: <>
             <Header />
+            <ProductList />
         </>,
     },
 ]);
