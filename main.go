@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"go_react/src/productStore"
@@ -93,8 +92,6 @@ func main() {
 	app.Get("/api/products", func(c *fiber.Ctx) error {
 		limitStr := c.Query("limit")
 		limit := 10
-
-		fmt.Println(123123123)
 
 		if limitStr != "" {
 			parsedLimit, err := strconv.Atoi(limitStr)
